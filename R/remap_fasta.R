@@ -115,7 +115,7 @@ remap_accessions_uniprot_to_gene_fasta <- function(path_to_FASTA){
    names(mySequences) <- top_len$genes
 
    file_no_ext <- file_path_sans_ext(path_to_FASTA, compression=TRUE)
-   ext <- sub(file_no_ext, "", path_to_FASTA)
+   ext <- sub(file_no_ext, "", path_to_FASTA, fixed = TRUE)
    path_to_FASTA_gene <- paste0(file_no_ext, '_gene', ext)
    writeXStringSet(mySequences, path_to_FASTA_gene, compress = is_compressed)
    return(path_to_FASTA_gene)
